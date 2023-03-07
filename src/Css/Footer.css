@@ -1,0 +1,46 @@
+footer {
+    width: 80%;
+    max-width: 1440px;
+
+    text-align: center;
+
+    border-top: 1px solid #fbbc05;
+    border-left: 1px solid #fbbc05;
+    border-right: 1px solid #fbbc05;
+
+    border-radius: 10px 10px 0px 0px;
+
+    margin-bottom: 0;
+    position: sticky;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}   
+
+footer p {
+    font-size: 25px;
+    font-weight: 100;
+    color: white;
+    margin-top: 1rem;
+}
+
+footer > p:hover {
+  transition: 0.5s;
+  color: transparent;
+}
+
+@media screen and (max-width: 425px) {
+  footer p {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  footer {
+      width: 100%;
+      border-right: none;
+      border-left: none;
+      border-radius: 0px;
+  }
+}
