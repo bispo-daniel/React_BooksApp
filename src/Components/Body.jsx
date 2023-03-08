@@ -26,7 +26,7 @@ class Body extends Component {
 
             resultField.appendChild(resultDiv)
 
-            let key = 'AIzaSyCB0CBageGarpFx7TMq231Qe6fvoyNN6vU'
+            let key = 'CHANGE_WITH_YOURS'
             let url = `https://www.googleapis.com/books/v1/volumes?q=intitle:${valval}&key=${key}&maxResults=3`
 
             fetch(url)
