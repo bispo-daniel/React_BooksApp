@@ -4,13 +4,14 @@ import { Component } from 'react'
 class Body extends Component {
     render(){
         let iterator = 0
+        let it = 0
 
         //Escondendo os resultados para outros tomarem lugar
         const clearHTML = () => {
             try {
-                let divToExclude = document.getElementById(`resultDiv${iterator}`)
+                let divToExclude = document.getElementById(`resultDiv${it}`)
                 divToExclude.style.display = 'none'
-                iterator++
+                it++
             }catch(error) {
                 window.location.reload()
             }
@@ -21,34 +22,40 @@ class Body extends Component {
             let resultField = document.getElementById("resultField")
             let resultDiv = document.createElement("div")
             resultDiv.setAttribute("id", `resultDiv${iterator}`)
+            iterator++
         
-            let valval = document.getElementById("inputCity").value
+            let bookFromInput = document.getElementById("inputCity").value
 
             resultField.appendChild(resultDiv)
 
-            let key = 'CHANGE_WITH_YOURS'
-            let url = `https://www.googleapis.com/books/v1/volumes?q=intitle:${valval}&key=${key}&maxResults=3`
+            
+            let key = process.env.REACT_APP_SECRET_KEY
+            let url = `https://www.googleapis.com/books/v1/volumes?q=intitle:${bookFromInput}&key=${key}&maxResults=1`
 
             fetch(url)
             .then(res => res.json())
             .then(val => {
-                console.log(val);
-                
-                for (let index in val.items) {
-                    let path = val.items[index]['volumeInfo']
-                        for(let x in path){
-                            let h1 = document.createElement('h1')
-                            h1.innerHTML = `${x.toLocaleUpperCase()}:`
-                            resultDiv.appendChild(h1)
+                let path = val.items[0]['volumeInfo']
 
-                            let p1 = document.createElement('p')
-                            p1.innerHTML = ` ${path[x]}`
-                            resultDiv.appendChild(p1)
-                        }
-                        let divider = document.createElement('hr')
-                        resultDiv.appendChild(divider)
-                    }
-                })
+                let h1 = document.createElement('h1')
+                h1.innerHTML = `${path['authors'][0]}:`
+                resultDiv.appendChild(h1)
+
+                let h2 = document.createElement('h1')
+                h2.innerHTML = `${path['title']} - ${path['subtitle']} (${path['publishedDate']}) `
+                resultDiv.appendChild(h2)
+
+                let pp = document.createElement('p')
+                pp.innerHTML = `${path['pageCount']} pages in ${path['language']}`
+                resultDiv.appendChild(pp)
+
+                let divider = document.createElement('hr')
+                resultDiv.appendChild(divider)
+
+                let p = document.createElement('p')
+                p.innerHTML = `${path['description']}`
+                resultDiv.appendChild(p)
+            })
         }
 
         //Capta se pressionaram o enter na página para chamar a função acima

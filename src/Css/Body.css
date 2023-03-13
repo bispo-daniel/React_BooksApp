@@ -3,10 +3,7 @@ main {
     max-width: 1024px;
     min-height: 350px;
 
-    border-top: 1px solid #34a853;
-    border-left: 1px solid #34a853;
-    border-right: 1px solid #34a853;
-    border-bottom: 1px solid #34a853;
+    border: 1px solid #34a853;
 
     border-radius: 10px;
 
@@ -27,6 +24,14 @@ main h1 {
     width: 100%;
 }
 
+#resultField > div {
+    border: 1px solid red;
+    border-radius: 10px;
+    padding: 15px;
+
+    margin-bottom: 30px;
+}
+
 #resultField > div > h1 {
     font-weight: 300;
     text-transform: none;
@@ -38,10 +43,6 @@ main h1 {
 #resultField > div > h1:hover {
     filter: invert(41%) sepia(95%) saturate(1958%) hue-rotate(204deg) brightness(103%) contrast(103%);
     transition: 0.5s;
-}
-
-#resultField > div > p {
-    margin-left: 15px;
 }
 
 #resultField > div > p:hover {
