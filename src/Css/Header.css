@@ -15,8 +15,16 @@ header {
 
     border-radius: 0px 0px 10px 10px;
 }
+@keyframes roda-roda {
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+
 header .reactLogo {
     width: 110px;
+
+    animation: roda-roda 2s linear infinite;
+
 }
 header .reactLogo:hover {
     transition: 0.5s;

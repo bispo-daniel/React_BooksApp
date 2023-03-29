@@ -68,13 +68,11 @@ class Body extends Component {
 
         return (
             <main onKeyUp={e => enterDown(e)}>
-                <div className="input-group mb-5 mt-3">
-                    <input id="inputCity" type="text" className="form-control" placeholder="Discover your favorite book..." 
-                            aria-label="Recipient's username" aria-describedby="basic-addon2"></input>
+                <div className="input-group mb-4 mt-3">
+                    <input id="inputCity" type="text" className="form-control bg-transparent" placeholder="Discover your favorite book..." 
+                            aria-label="Recipient's username" aria-describedby="basic-addon2" style={{color: "white"}}/>
                         
-                    <div className="input-group-append">
-                        <button onClick={() => apiHandler()} className="btn btn-outline-secondary" type="button">Search</button>
-                    </div>
+                    <button onClick={() => apiHandler()} className="btn btn-outline-success" type="button">Search</button>
                 </div>
 
                 <button type="button" className="btn btn-danger w-75 mb-5"
