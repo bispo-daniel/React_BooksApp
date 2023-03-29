@@ -1,5 +1,5 @@
 # Check this project online:
-  https://bispo-daniel-booksapp.netlify.app
+  https://bishop-booksapp.netlify.app
 
 # Getting Started with Create React App
 
