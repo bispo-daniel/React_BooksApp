@@ -1,6 +1,6 @@
 import '../Css/Body.css'
 import { Component } from 'react'
-import Trigger from '../Triger'
+import Trigger from '../Trigger'
 
 class Body extends Component {
     render(){
