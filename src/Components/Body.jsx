@@ -1,5 +1,6 @@
 import '../Css/Body.css'
 import { Component } from 'react'
+import Trigger from '../Triger'
 
 class Body extends Component {
     render(){
@@ -25,6 +26,7 @@ class Body extends Component {
             iterator++
         
             let bookFromInput = document.getElementById("inputCity").value
+            Trigger(bookFromInput)            
 
             resultField.appendChild(resultDiv)
 
@@ -67,7 +69,7 @@ class Body extends Component {
         }
 
         return (
-            <main onKeyUp={e => enterDown(e)}>
+            <main onKeyUp={e => enterDown(e)} onLoad={e => Trigger("")}>
                 <div className="input-group mb-4 mt-3">
                     <input id="inputCity" type="text" className="form-control bg-transparent" placeholder="Discover your favorite book..." 
                             aria-label="Recipient's username" aria-describedby="basic-addon2" style={{color: "white"}}/>
