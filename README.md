@@ -1,6 +1,11 @@
 # Check this project online:
   https://bishop-booksapp.netlify.app
 
+# About this project...
+  React project developed to query books information. The API used is from Google.
+  //Get your key here:
+  https://developers.google.com/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
