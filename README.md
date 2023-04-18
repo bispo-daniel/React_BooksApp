@@ -1,7 +1,7 @@
 # Check this project online:
   https://bishop-booksapp.netlify.app
 
-![all-text](https://github.com/bispo-daniel/React_BooksApp/tree/master/src/Images/Screen.png)
+![all-text](https://github.com/bispo-daniel/React_BooksApp/blob/master/src/Images/Screen.png)
 
 # About this project...
   React project developed to query books information. 
