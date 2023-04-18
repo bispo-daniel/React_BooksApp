@@ -24,7 +24,6 @@ header .reactLogo {
     width: 110px;
 
     animation: roda-roda 2s linear infinite;
-
 }
 header .reactLogo:hover {
     transition: 0.5s;
